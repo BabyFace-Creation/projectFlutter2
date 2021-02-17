@@ -1,0 +1,59 @@
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+            centerTitle: true,
+            title: Text('News'),
+            backgroundColor: Colors.amber[900]),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[Text("Menu 1"), Text("Menu 2")],
+            ),
+            Container(
+              color: Colors.amber,
+              child: FlutterLogo(size: 90.0),
+            ),
+            Container(
+              child: Text("This is Flutter Logo 1"),
+            ),
+            Container(
+              child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text("This is Flutter Logo 2")),
+              color: Colors.amberAccent[700],
+              height: 50,
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  color: Colors.orangeAccent,
+                  child: FlutterLogo(size: 90),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text("This Article is talking about flutter"),
+                )
+              ],
+            ),
+            Container(
+              child: Align(alignment: Alignment.centerLeft, child: Text("End")),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
